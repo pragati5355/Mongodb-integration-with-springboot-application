@@ -3,6 +3,7 @@ package com.specification_demo.demo.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -14,12 +15,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import lombok.Data;
 
-
-@Data
-@MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+@Document()
 public class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
